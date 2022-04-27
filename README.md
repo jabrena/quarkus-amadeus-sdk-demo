@@ -1,0 +1,1 @@
+# quarkus-amadeus-sdk-demo
