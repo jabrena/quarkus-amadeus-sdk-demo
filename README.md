@@ -1,4 +1,6 @@
-# Spring Boot + Amadeus Java SDK Demo
+# Quarkus + Amadeus Java SDK Demo
+
+[![Java CI](https://github.com/jabrena/quarkus-amadeus-sdk-demo/actions/workflows/build.yml/badge.svg)](https://github.com/jabrena/quarkus-amadeus-sdk-demo/actions/workflows/build.yml)
 
 ## Motivation
 
