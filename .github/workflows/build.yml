@@ -18,5 +18,3 @@ jobs:
           AMADEUS_CLIENT_ID: ${{ secrets.AMADEUS_CLIENT_ID }}
           AMADEUS_CLIENT_SECRET: ${{ secrets.AMADEUS_CLIENT_SECRET }}
         run: ./mvnw test -B
-      - name: Publish Test Report
-        uses: scacap/action-surefire-report@v1

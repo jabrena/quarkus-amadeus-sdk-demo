@@ -21,7 +21,7 @@ public class CovidResource {
         var AMADEUS_CLIENT_ID = System.getenv("AMADEUS_CLIENT_ID");
         var AMADEUS_CLIENT_SECRET = System.getenv("AMADEUS_CLIENT_SECRET");
 
-        var amadeus = Amadeus.builder(AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET).setLogLevel("debug").build();
+        var amadeus = Amadeus.builder(AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET).build();
         var countryCode = (!Objects.isNull(stateCode)) ? stateCode : "ES";
 
         var params = Params.with("countryCode", countryCode);
