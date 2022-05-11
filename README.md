@@ -33,6 +33,12 @@ curl 'http://localhost:8080/api/v1/covid-restrictions'
 curl 'http://localhost:8080/api/v1/covid-restrictions?country-code=FR'
 ```
 
+**Others:**
+
+```
+curl 'http://localhost:8080/api/v1/config-demo'
+```
+
 # References
 
 - https://quarkus.io/guides/getting-started
