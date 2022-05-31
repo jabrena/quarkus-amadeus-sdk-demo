@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Objects;
 
-//@Startup //The same effect than in Spring
+@Startup //The same effect as Spring does
 @ApplicationScoped
 public class AmadeusService {
 
@@ -24,7 +24,10 @@ public class AmadeusService {
                 ? "PENDING_AMADEUS_CLIENT_ID" : System.getenv("AMADEUS_CLIENT_ID");
         this.AMADEUS_CLIENT_SECRET = (Objects.isNull(System.getenv("AMADEUS_CLIENT_SECRET")))
                 ? "PENDING_AMADEUS_CLIENT_ID" : System.getenv("AMADEUS_CLIENT_SECRET");
-        this.amadeus = Amadeus.builder(AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET).build();
+        this.amadeus = Amadeus
+                .builder(AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET)
+                .setLogLevel("debug")
+                .build();
     }
 
     @PostConstruct

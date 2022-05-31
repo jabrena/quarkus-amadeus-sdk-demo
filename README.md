@@ -29,6 +29,19 @@ export AMADEUS_CLIENT_SECRET=YOUR_CLIENT_SECRET
 ./mvnw clean compile quarkus:dev
 ./mvnw clean package
 java -jar target/quarkus-app/quarkus-run.jar
+./mvnw package -Dnative
+./mvnw verify -Pnative
+#./mvnw package -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:22.1.0.0-Final-java17
+./target/getting-started-1.0.0-SNAPSHOT-runner
+
+docker build -f src/main/docker/Dockerfile.jvm -t 1a4dev/covid:latest .
+docker run -i --rm -p 8080:8080 \
+    -e AMADEUS_CLIENT_ID=$AMADEUS_CLIENT_ID \
+    -e AMADEUS_CLIENT_SECRET=$AMADEUS_CLIENT_SECRET \
+    -t 1a4dev/covid:latest
+```
+
+```
 curl 'http://localhost:8080/api/v1/covid-restrictions'
 curl 'http://localhost:8080/api/v1/covid-restrictions?country-code=FR'
 ```
