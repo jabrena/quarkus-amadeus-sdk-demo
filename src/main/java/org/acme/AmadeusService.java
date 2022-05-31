@@ -1,6 +1,7 @@
 package org.acme;
 
 import com.amadeus.Amadeus;
+import io.quarkus.runtime.Startup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Objects;
 
+//@Startup //The same effect than in Spring
 @ApplicationScoped
 public class AmadeusService {
 
